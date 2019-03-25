@@ -1,7 +1,14 @@
 language: node_js
 node_js: node
-cache:
+cache: 
 directories:
 - node_modules
 env:
 - CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: H8dYC53XuxWvN5dSMbR9xwksFvSRv5AqDvxlpzkXhUwQcGyxAdMSKs4EEKhOpW97p66huh0tlmY3kGFSIdW+RbmqFYwKkjIeptMQqag28JootJDeprJ22pNuDYrNvJcLDqFcAeq+Xid/y5qx/9LE83tlGKlWGJ8hgR2lIdmz66DfQvE3Z/aQzCCruRkJYdYxqPFuIFdJxzgC3Mx7/U+wSgFAUwGk3JsIS+MAqvbwvT1C268+FibJo4xW5DOn6tiZXeNgxlUphjqn95QyHIfSlQ68lvYqu2zSfWQMvGxDZGToxJh2emBt6GG8I0G+DYQukkxHaG2waIKVJmVKL7Pb2WQ53FcwirgMiPm00WYQ9pEzWufhTV/rEXHueDeyOyMcHzRi2CpAOKJhYqZnFbLYFsnTzJAs8DQ2/b/u1w4FwAw9r8RlaoLxs4hL2WZailXXQo/ZwvybOi80ge6BhdamlnoZlKBoUNMNaewcW97qwq9m+gp/txH1zlvRROeh76dLxaKl9VAzmDUSq1EJGMNvhP2cyy9SkJULzxPl2zZZCVg6gCZeWXS9DGhJGqNY31HZmK35MET9H/qP+S06VaWbMpLfGDrfeoHm47F5GcqtqdEG+maBDxFFo8uBBmRqO4jqoOHY3OGiv6vfJZkCtzJ/4y7knJKKBPVwIIKSg2aGQn8=
+  app: guarded-taiga-49879
+  on:
+    repo: calorab/concert-search-app-react
