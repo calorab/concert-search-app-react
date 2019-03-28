@@ -5,7 +5,7 @@ import React from 'react';
 
 import './searchartist.css';
 
-export class SearchArtist extends react.Component {
+export default class SearchArtist extends React.Component {
     render() {
         return(
             <div class="page" id="dashboard">
@@ -16,15 +16,10 @@ export class SearchArtist extends react.Component {
                 <form id="searchForm">
                     <fieldset>
                         <label for="artistSearch" >Enter an artist here... </label>
-                        <input type="text" id="artistSearch" name="artistSearch">
+                        <input type="text" id="artistSearch" name="artistSearch" />
                     </fieldset>
             <button type="submit" name="submit" className="submitButton" id="searchButton">Search Artist</button>
                 </form>
-
-                <div>
-            //CALEB - need to add in this component
-                    <ShowArtists />
-                </div>
             </div>
         );
     }

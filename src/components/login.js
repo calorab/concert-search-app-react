@@ -5,17 +5,17 @@ import './login.css';
 
 //import { loginForm } from '../actions';
 
-export class Login extends React.Component {
+export default class Login extends React.Component {
     render() {
         return (
             <div class="page" id="loginPage">
                 <form>
                     <legend>Login Below</legend>
                     <fieldset>
-                        <label for="loginEmail">Email</label>br>
+                        <label for="loginEmail">Email</label><br />
                         <input name="userEmail" type="email" id="loginEmail" required></input>
-                        <br>
-                        <label></label>br>
+                        <br />
+                        <label></label><br />
                         <input name="userPassword" type="password" id="loginPassword" required></input>
                     </fieldset>
                     <button type="submit" className="submitButton" id="LoginButton">Login</button>
@@ -25,4 +25,4 @@ export class Login extends React.Component {
     }
 }
 
-export default connect ()(Login);
+//export default connect ()(Login);
