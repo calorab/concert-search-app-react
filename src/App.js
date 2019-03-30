@@ -11,6 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+            <p className="bannerTitle">ConcertMonster</p>
         </header>
         <Login />
         <Signup />

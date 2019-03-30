@@ -8,8 +8,8 @@ import './signup.css';
 export default class Signup extends React.Component {
     render() {
         return (
-            <div class="page" id="signupPage">
-                <form>
+            <div className="page" id="signupPage">
+                <form className="form">
                     <legend>Sign-up Below</legend>
                     <fieldset>
                         <label for="signupEmail">Email</label><br />

@@ -8,12 +8,12 @@ import './searchartist.css';
 export default class SearchArtist extends React.Component {
     render() {
         return(
-            <div class="page" id="dashboard">
+            <div className="page" id="dashboard">
                 <header>
                     <h1>Your Dashboard</h1>
                     <p>Search for an artist + Find upcoming concerts + Like your favorites to stay connected</p>
                 </header>
-                <form id="searchForm">
+                <form className="form" id="searchForm">
                     <fieldset>
                         <label for="artistSearch" >Enter an artist here... </label>
                         <input type="text" id="artistSearch" name="artistSearch" />

@@ -4,8 +4,8 @@ import './followedartists.css';
 export default class FollowedArtist extends React.Component {
     render() {
         return(
-            <div class="page" id="dashboard">
-                <h1>Your Artists...</h1>
+            <div className="page" id="dashboard">
+                <h1 className="artistHeader">Your Artists...</h1>
                 <section id="artistsListSection">
                     <li>
                         <h3>Alison Wonderland</h3>

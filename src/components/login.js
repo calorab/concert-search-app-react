@@ -8,8 +8,8 @@ import './login.css';
 export default class Login extends React.Component {
     render() {
         return (
-            <div class="page" id="loginPage">
-                <form>
+            <div className="page" id="loginPage">
+                <form className="form">
                     <legend>Login Below</legend>
                     <fieldset>
                         <label for="loginEmail">Email</label><br />
