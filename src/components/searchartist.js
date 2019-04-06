@@ -20,6 +20,8 @@ export default class SearchArtist extends React.Component {
                     </fieldset>
             <button type="submit" name="submit" className="submitButton" id="searchButton">Search Artist</button>
                 </form>
+                <div id="searchResults">
+                </div>
             </div>
         );
     }

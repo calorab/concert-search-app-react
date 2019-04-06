@@ -7,20 +7,12 @@ export default class FollowedArtist extends React.Component {
             <div className="page" id="dashboard">
                 <h1 className="artistHeader">Your Artists...</h1>
                 <section id="artistsListSection">
-                    <li>
-                        <h3>Alison Wonderland</h3>
-                        <button className="submitButton">See Concerts...</button>
-                    </li>
-                    <li>
-                        <h3>Dermot Kennedy</h3>
-                        <button className="submitButton">See Concerts...</button>
-                    </li>
-                    <li>
-                        <h3>The Weeknd</h3>
-                        <button className="submitButton">See Concerts...</button>
-                    </li>
+                    //followed artists go here
                 </section>
             </div>
         );
     }
 }
+
+
+
