@@ -4,7 +4,7 @@ const initialState = {
     followedArtists: [],
 };
 
-export const artistReducer = (state=initialState, action) => {
+export const concertSearchReducer = (state=initialState, action) => {
     if (action.type === ADD_ARTIST) {
         return
             <li>
