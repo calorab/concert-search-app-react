@@ -1,5 +1,5 @@
 import {createStore} from 'redux'
 
-import {concertSearchReducer} from './reducers';
+import {concertSearchReducer} from './reducer';
 
 export default createStore(concertSearchReducer);
