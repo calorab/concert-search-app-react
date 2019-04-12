@@ -1,5 +1,4 @@
 import React from 'react';
-import './signup.css';
 
 //import { connect } from 'react-redux';
 

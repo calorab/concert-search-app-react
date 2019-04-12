@@ -1,4 +1,6 @@
-import {ADD_ARTIST, ADD_USER_ID} from './actions';
+//ADD_USER_ID !!!
+import {ADD_ARTIST} from './actions';
+import React from 'react';
 
 const initialState = {
     followedArtists: [],
@@ -6,15 +8,15 @@ const initialState = {
 
 export const concertSearchReducer = (state=initialState, action) => {
     if (action.type === ADD_ARTIST) {
-        return
+        return (
             <li>
             <h3>Alison Wonderland</h3>
             <button className="submitButton">See Concerts...</button>
             </li>
-        });
+        );
     }
     return state;
-}
+};
 
 
 //Object.assign({}, state, {

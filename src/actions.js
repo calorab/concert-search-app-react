@@ -6,6 +6,6 @@ export const addArtist = artist => ({
 
 export const ADD_USER_ID = 'ADD_USER_ID';
 export const addUserId = userId => ({
-    type: ADD_USER,
+    type: ADD_USER_ID,
     userId
 });

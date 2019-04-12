@@ -1,7 +1,6 @@
 import React from 'react';
-import './dashboard.css';
 
-import {addArtist} from '../actions';
+//import {addArtist} from '../actions';
 
 import SearchArtists from './searchartist';
 import FollowedArtists from './followedartists';
