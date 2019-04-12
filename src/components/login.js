@@ -5,7 +5,28 @@ import React from 'react';
 //import { loginForm } from '../actions';
 
 export default class Login extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            editing: false
+        }
+    }
+
+
+
+    setEditing() {
+        this.setState({
+            editing: true
+        });
+    }
+
     render() {
+        if (!this.state.editing) {
+            return (
+                <div className='homeButton'onClick={()=> this.setEditing(true)}>Returning user? Click here...</div>
+            );
+        }
+
         return (
             <div className="page" id="loginPage">
                 <form className="form">

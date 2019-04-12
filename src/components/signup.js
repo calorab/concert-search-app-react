@@ -5,7 +5,25 @@ import React from 'react';
 //import { SignupForm } from '../actions';
 
 export default class Signup extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            editing: false
+        }
+    }
+    setEditing() {
+        this.setState({
+            editing: true
+        });
+    }
+
     render() {
+        if (!this.state.editing) {
+            return (
+                <div className='homeButton' onClick={()=> this.setEditing(true)}>New user? Click here...</div>
+            );
+        }
+
         return (
             <div className="page" id="signupPage">
                 <form className="form">
