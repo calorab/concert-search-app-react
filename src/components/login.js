@@ -5,35 +5,7 @@ import React from 'react';
 //import { loginForm } from '../actions';
 
 export default class Login extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            editing: false
-        }
-    }
-
-    onSubmit(event) {
-        event.preventDefault();
-        return (
-            <div>
-                <dashboard />
-            </div>
-        );
-    }
-
-    setEditing(editing) {
-        this.setState({
-            editing
-        });
-    }
-
-    render() {
-        if (!this.state.editing) {
-            return (
-                <div className='homeButton'onClick={()=> this.setEditing(true)}>Returning user? Click here...</div>
-            );
-        }
-
+    render(){
         return (
             <div className="page" id="loginPage">
                 <form className="form" onSubmit={(event) => this.onSubmit(event)}>
@@ -46,7 +18,6 @@ export default class Login extends React.Component {
                         <input name="userPassword" type="password" id="loginPassword" required></input>
                     </fieldset>
                     <button type="submit" className="submitButton" id="LoginButton">Login</button>
-                    <button type="button" className="submitButton" id="cancelLoginButton" onClick={() => this.setEditing(false)}>Cancel</button>
                 </form>
             </div>
         );

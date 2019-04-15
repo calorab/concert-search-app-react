@@ -26,7 +26,7 @@ class App extends React.Component {
 export default App;
 
 
-//<Link to="/login">Login</Link>
+//
 //onSubmit()
 //
 //// send ot the server
