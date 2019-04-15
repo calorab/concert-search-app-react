@@ -1,14 +1,20 @@
 import React from 'react';
-
 //import { connect } from 'react-redux';
 
 //import { loginForm } from '../actions';
 
 export default class Login extends React.Component {
+
+    onSubmit(event){
+        event.preventDefault();
+        this.props.history.push('/dashboard');
+    }
+
     render(){
+
         return (
             <div className="page" id="loginPage">
-                <form className="form" onSubmit={(event) => this.onSubmit(event)}>
+                <form className="form" onSubmit={event => this.onSubmit(event)}>
                     <legend>Login Below</legend>
                     <fieldset>
                         <label for="loginEmail">Email</label><br />

@@ -4,6 +4,7 @@ import './App.css';
 
 import Login from './components/login';
 import Signup from './components/signup';
+import Dashboard from './components/dashboard';
 //import Dashboard from './components/dashboard';
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
                   </header>
                   <Route exact path="/" component={Signup} />
                   <Route path="/login" component={Login}/>
+                  <Route path="/dashboard" component={Dashboard}/>
               </div>
           </Router>
       );

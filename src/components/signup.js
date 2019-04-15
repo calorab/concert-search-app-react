@@ -6,11 +6,18 @@ import Login from './login';
 //import { SignupForm } from '../actions';
 
 export default class Signup extends React.Component {
+
+    onSubmit(event){
+        event.preventDefault();
+        this.props.history.push('/dashboard');
+    }
+
     render(){
+
         return (
             <Router>
                 <div className="page" id="signupPage">
-                    <form className="form">
+                    <form className="form" onSubmit={event => this.onSubmit(event)}>
                         <legend>Sign-up Below</legend>
                         <fieldset>
                             <label for="signupEmail">Email</label><br />
