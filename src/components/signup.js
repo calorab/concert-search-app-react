@@ -11,9 +11,10 @@ export default class Signup extends React.Component {
             editing: false
         }
     }
-    setEditing() {
+
+    setEditing(editing) {
         this.setState({
-            editing: true
+            editing
         });
     }
 
@@ -36,6 +37,7 @@ export default class Signup extends React.Component {
                         <input name="newUserPassword" type="password" id="signupPassword" required></input>
                     </fieldset>
                     <button type="submit" className="submitButton" id="signupButton">Login</button>
+                    <button type="button" className="submitButton" id="cancelSignupButton" onClick={() => this.setEditing(false)}>Cancel</button>
                 </form>
             </div>
         );

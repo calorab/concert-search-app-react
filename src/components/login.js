@@ -12,11 +12,18 @@ export default class Login extends React.Component {
         }
     }
 
+    onSubmit(event) {
+        event.preventDefault();
+        return (
+            <div>
+                <dashboard />
+            </div>
+        );
+    }
 
-
-    setEditing() {
+    setEditing(editing) {
         this.setState({
-            editing: true
+            editing
         });
     }
 
@@ -29,7 +36,7 @@ export default class Login extends React.Component {
 
         return (
             <div className="page" id="loginPage">
-                <form className="form">
+                <form className="form" onSubmit={(event) => this.onSubmit(event)}>
                     <legend>Login Below</legend>
                     <fieldset>
                         <label for="loginEmail">Email</label><br />
@@ -39,6 +46,7 @@ export default class Login extends React.Component {
                         <input name="userPassword" type="password" id="loginPassword" required></input>
                     </fieldset>
                     <button type="submit" className="submitButton" id="LoginButton">Login</button>
+                    <button type="button" className="submitButton" id="cancelLoginButton" onClick={() => this.setEditing(false)}>Cancel</button>
                 </form>
             </div>
         );
