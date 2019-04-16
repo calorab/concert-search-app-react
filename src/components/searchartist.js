@@ -6,6 +6,7 @@ import React from 'react';
 
 export default class SearchArtist extends React.Component {
     render() {
+        //include input parameter with the dispatch object
         return(
             <div className="page" id="dashboard">
                 <header>
