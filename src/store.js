@@ -1,5 +1,5 @@
-import {createStore, applyMiddleware} from 'redux'
+import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {concertSearchReducer} from './reducer';
 
-export default createStore(concertSearchReducer);
+export default createStore(concertSearchReducer, applyMiddleware(thunk));

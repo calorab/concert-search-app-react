@@ -13,17 +13,43 @@ export const addUserId = userId => ({
     userId
 });
 
+export const SEARCH_ARTIST_REQUEST = 'SEARCH_ARTIST_REQUEST';
+export const searchArtistRequest = () => ({
+    type: SEARCH_ARTIST_REQUEST
+});
+
+export const SEARCH_ARTIST_SUCCESS = 'SEARCH_ARTIST_SUCCESS';
+export const searchArtistSuccess = artists => ({
+    type: SEARCH_ARTIST_SUCCESS,
+    artists
+});
+
+export const SEARCH_ARTIST_ERROR = 'SEARCH_ARTIST_ERROR';
+export const searchArtistError = error => ({
+    type: SEARCH_ARTIST_ERROR,
+    error
+});
+
 //-------update this for my app and for POST's
-export const fetchSearchArtists = () => dispatch => {
-    fetch(`${API_BASE_URL}/board`, {method: POST, body: JSON.stringify(), }).then(res => {
+export const fetchSearchArtists = artistName => dispatch => {
+    fetch(`${API_BASE_URL}/songkick/` + artistName).then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
-    }).then(board => {
-        dispatch(fetchBoardSuccess(board));
+    }).then(artists => {
+        dispatch(searchArtistSuccess(artists));
+    }).catch(error => {dispatch(searchArtistError(error))
     });
 };
 
 
-
+//function formatArtistInfo (data) {
+//    let artist = data.resultsPage.results.artist[0];
+//    return {
+//        id: artist.id,
+//        name: artist.displayName
+//    };
+//}
+//// calling:
+//let info = formatArtistInfo(JSON.parse(body));
