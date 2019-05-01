@@ -13,9 +13,7 @@ export class SearchArtist extends React.Component {
         if (this.props.error) {
             return <strong>{this.props.error}</strong>
         }
-
         //CALEB ------- Add in ADD_ARTIST data and onClick for <li> -------
-
         const artists = this.props.artists.map((artist, index) =>
             <li key={index}>
                 {artist}
@@ -23,10 +21,13 @@ export class SearchArtist extends React.Component {
         );
 
         return (
-            <strong>Click on the artist to follow them...<strong>
-            <ul>
-                {artists}
-            </ul>
+            <div>
+                <strong>Click on the artist to follow them...</strong>
+
+                <ul>
+                    {artists}
+                </ul>
+            </div>
         );
     }
 
@@ -36,16 +37,16 @@ export class SearchArtist extends React.Component {
         if (this.input.value.trim() === '') {
             return <strong>You forgot the artist...</strong>;
         }
+
         this.props.dispatch(fetchSearchArtists(this.input.value));
     }
 
-
     render() {
-        //include input parameter with the dispatch object
+
         return(
-            <div className="page" id="dashboard">
+            <div className="page" id="artistSearch">
                 <header>
-                    <h1>Your Dashboard</h1>
+                    <h1>Search for Artists. Here is how it works:</h1>
                     <ol>
                         <li>Search for an artist</li>
                         <li>Follow your favorites to stay connected</li>
@@ -60,6 +61,7 @@ export class SearchArtist extends React.Component {
             <button type="submit" name="submit" className="submitButton" id="searchButton">Search Artist</button>
                 </form>
                 <div id="searchResults">
+                    {this.renderResults()}
                 </div>
             </div>
         );
