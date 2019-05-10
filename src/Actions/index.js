@@ -6,7 +6,7 @@ export const addArtist = artist => ({
     type: ADD_ARTIST,
     artist
 });
-
+//-------CALEB - do this + reducer before you can test searchArtist DUH -------
 export const ADD_USER_ID = 'ADD_USER_ID';
 export const addUserId = userId => ({
     type: ADD_USER_ID,

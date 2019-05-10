@@ -16,8 +16,8 @@ class App extends React.Component {
                   <header className="App-header">
                       <h1><Link to="/">ConcertMonster</Link></h1>
                   </header>
-                  <Route exact path="/" component={Signup} />
-                  <Route path="/login" component={Login}/>
+                  <Route exact path="/" component={Login} />
+                  <Route path="/signup" component={Signup}/>
                   <Route path="/dashboard" component={Dashboard}/>
               </div>
           </Router>
