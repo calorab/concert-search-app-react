@@ -1,5 +1,5 @@
 //ADD_USER_ID !!!
-import {ADD_ARTIST} from '../Actions/index';
+import {ADD_ARTIST} from '../actions/index';
 import React from 'react';
 
 const initialState = {
