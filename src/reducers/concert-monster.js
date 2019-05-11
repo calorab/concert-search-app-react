@@ -1,12 +1,12 @@
 //ADD_USER_ID !!!
-import {ADD_ARTIST} from './actions';
+import {ADD_ARTIST} from '../Actions/index';
 import React from 'react';
 
 const initialState = {
     followedArtists: [],
 };
 
-export const concertSearchReducer = (state=initialState, action) => {
+export default function concertMonsterReducer(state=initialState, action) {
     if (action.type === ADD_ARTIST) {
         return (
             <li>
@@ -19,7 +19,7 @@ export const concertSearchReducer = (state=initialState, action) => {
 };
 
 
-//Object.assign({}, state, {
+////Object.assign({}, state, {
 //    followedArtists: [...state.followedArtists, {
 //        artistName: action.artistName,
 //    }]
