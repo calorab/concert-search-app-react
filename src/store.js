@@ -1,5 +1,17 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
-import {concertSearchReducer} from './reducer';
+import {concertMonsterReducer} from './reducers/concert-monster';
+import {authorizingReducer} from './reducers/authorize';
 
-export default createStore(concertSearchReducer, applyMiddleware(thunk));
+const store = createStore(
+    combineReducers({
+        form: formReducer,
+        auth: authorizingReducer,
+        main: concertMonsterReducer
+    }),
+    applyMiddleware(thunk)
+);
+
+export default store;
+
