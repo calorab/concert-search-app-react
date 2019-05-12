@@ -4,13 +4,15 @@ import SearchArtists from './searchartist';
 import FollowedArtists from './followedartists';
 // import {connect} from 'react-redux';
 import RequireLogin from './require-login';
-import {fetchProtectedData} from '../actions/protected-data';
+//CALEB ------- Update the below for your use
+//import {fetchProtectedData} from '../actions/protected-data';
+
 //CALEB ------- update to dispatch GET followed artists or whatever
 export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
-//CALEB ------- Correct this to add followered rtists and search artists to the return
+//CALEB ------- Correct this to add followered artists and search artists to the return
     render() {
         return (
             <div className="dashboard">
@@ -18,6 +20,7 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
+                //CALEB ------- this is diplaying the data from above line 13
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>

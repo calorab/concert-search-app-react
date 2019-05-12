@@ -41,7 +41,7 @@ const storeAuthInfo = (authToken, dispatch) => {
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
 };
-
+ //CALEB - update fetch endpoint --------
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
@@ -78,6 +78,7 @@ export const login = (username, password) => dispatch => {
     );
 };
 
+//CALEB ------- Find out which endpoint this needs to go to based off the backend for the jwt example
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
     const authToken = getState().auth.authToken;

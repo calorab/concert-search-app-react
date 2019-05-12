@@ -43,6 +43,7 @@ export const fetchSearchArtists = artistName => dispatch => {
     });
 };
 
+//CALEB ------- Need to add fetchDashboardData and ACTIONS INITIALIZERS to 'GET' followedArtists and link in dashboard componenDidMount
 
 //function formatArtistInfo (data) {
 //    let artist = data.resultsPage.results.artist[0];
