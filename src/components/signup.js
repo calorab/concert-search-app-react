@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
-import Login from './login';
+import {BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
+//import Login from './login';
 import RegistrationForm from './registration-form';
 
 //import { SignupForm } from '../actions';
