@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchSearchArtists } from '../actions';
+import { fetchSearchArtists } from '../actions/concert-monster';
 
 
 export class SearchArtist extends React.Component {

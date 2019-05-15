@@ -1,7 +1,7 @@
 import React from 'react';
 
 import fetchSearchArtists from './searchartist';
-import FollowedArtists from './followedartists';
+//import FollowedArtists from './followedartists';
 import {connect} from 'react-redux';
 import requireLogin from './require-login';
 //CALEB ------- Update the below for your use
@@ -13,6 +13,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchSearchArtists());
     }
 //CALEB ------- Correct this to add followered artists and search artists to the return
+//(CALEB ------- line 24 is displaying the data from above line 13)
     render() {
         return (
             <div className="dashboard">
@@ -20,7 +21,6 @@ export class Dashboard extends React.Component {
                     Username: {this.props.username}
                 </div>
                 <div className="dashboard-name">Name: {this.props.name}</div>
-                //CALEB ------- this is diplaying the data from above line 13
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>

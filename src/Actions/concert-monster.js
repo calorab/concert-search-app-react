@@ -1,6 +1,6 @@
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utils';
 
+import {API_BASE_URL} from '../config';
+//// import {normalizeResponseErrors} from './utils';
 
 
 export const ADD_ARTIST = 'ADD_ARTIST';
