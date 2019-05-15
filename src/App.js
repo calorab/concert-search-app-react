@@ -1,5 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, withRouter, Link} from 'react-router-dom';
+import {refreshAuthToken} from './actions/authorize';
+
 import './App.css';
 
 import Login from './components/login';

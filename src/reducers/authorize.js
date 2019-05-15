@@ -13,7 +13,7 @@ const initialState = {
     error: null
 };
 
-export default function authorizeReducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken
@@ -41,3 +41,5 @@ export default function authorizeReducer(state = initialState, action) {
     }
     return state;
 }
+
+export default reducer;

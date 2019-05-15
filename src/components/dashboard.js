@@ -1,16 +1,16 @@
 import React from 'react';
 
-import SearchArtists from './searchartist';
+import fetchSearchArtists from './searchartist';
 import FollowedArtists from './followedartists';
-// import {connect} from 'react-redux';
-import RequireLogin from './require-login';
+import {connect} from 'react-redux';
+import requireLogin from './require-login';
 //CALEB ------- Update the below for your use
 //import {fetchProtectedData} from '../actions/protected-data';
 
 //CALEB ------- update to dispatch GET followed artists or whatever
 export class Dashboard extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchProtectedData());
+        this.props.dispatch(fetchSearchArtists());
     }
 //CALEB ------- Correct this to add followered artists and search artists to the return
     render() {
@@ -38,7 +38,7 @@ const mapStateToProps = state => {
     };
 };
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default requireLogin()(connect(mapStateToProps)(Dashboard));
 
 
 // export default class Dashboard extends React.Component {
