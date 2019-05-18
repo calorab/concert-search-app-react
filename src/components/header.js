@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
+import {clearAuth} from '../actions/authorize';
 import {clearAuthToken} from '../local-storage';
+import {Link} from 'react-router-dom';
 
-export class header extends React.Component {
+export class Header extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
@@ -19,7 +20,9 @@ export class header extends React.Component {
         }
         return (
             <div className="header-bar">
-                <h1>Foo App</h1>
+                <header className="App-header">
+                      <h1><Link to="/">ConcertMonster</Link></h1>
+                </header>
                 {logOutButton}
             </div>
         );
@@ -30,4 +33,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(HeaderBar);
+export default connect(mapStateToProps)(Header);

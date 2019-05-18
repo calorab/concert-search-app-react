@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, withRouter, Link} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import {refreshAuthToken} from './actions/authorize';
 
 import './App.css';
@@ -8,6 +8,7 @@ import './App.css';
 import Login from './components/login';
 import Signup from './components/signup';
 import Dashboard from './components/dashboard';
+import Header from './components/header';
 //import Dashboard from './components/dashboard';
 
 export class App extends React.Component {
@@ -41,16 +42,14 @@ export class App extends React.Component {
     }
     render() {
       return (
-          <Router>
+          <BrowserRouter>
               <div className="App">
-                  <header className="App-header">
-                      <h1><Link to="/">ConcertMonster</Link></h1>
-                  </header>
-                  <Route exact path="/" component={Login} />
-                  <Route path="/signup" component={Signup}/>
-                  <Route path="/dashboard" component={Dashboard}/>
+                  <Header />
+                  <Route exact path="/" component={Signup} />
+                  <Route exact path="/login" component={Login}/>
+                  <Route exact path="/dashboard" component={Dashboard}/>
               </div>
-          </Router>
+          </BrowserRouter>
       );
     }
 }
@@ -61,7 +60,7 @@ const mapStateToProps = state => ({
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
-export default withRouter(connect(mapStateToProps)(App));
+export default connect(mapStateToProps)(App);
 
 
 //

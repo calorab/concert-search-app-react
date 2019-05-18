@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Link, Redirect} from 'react-router-dom';
-//import Login from './login';
+import {Link, Redirect} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 
 //import { SignupForm } from '../actions';
@@ -11,13 +10,11 @@ export function Signup(props) {
     return <Redirect to="/dashboard" />;
     }
     return (
-        <Router>
             <div className="home">
-                <h2>Register for Foo App</h2>
+                <h2>Register for Concert Monster</h2>
                 <RegistrationForm />
-                <Link to="/">Login</Link>
+                <Link to="/login">Login</Link>
             </div>
-        </Router>
     );    
 }
 

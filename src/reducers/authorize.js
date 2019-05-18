@@ -1,3 +1,5 @@
+
+
 import {
     SET_AUTH_TOKEN,
     CLEAR_AUTH,
@@ -7,13 +9,13 @@ import {
 } from '../actions/authorize';
 
 const initialState = {
-    authToken: null, // authToken !== null does not mean it has been validated
+    authToken: null, 
     currentUser: null,
     loading: false,
     error: null
 };
 
-export function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken
@@ -41,5 +43,3 @@ export function reducer(state = initialState, action) {
     }
     return state;
 }
-
-export default reducer;
