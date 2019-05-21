@@ -10,6 +10,7 @@ const matchesPassword = matches('password');
 //removed firstName and lastName from lines 13-14 and commented out line 32-35
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
+//        event.preventDefault();
         const {username, password} = values;
         const user = {username, password};
         return this.props
