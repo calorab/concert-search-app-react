@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 
-//import { SignupForm } from '../actions';
-
 export function Signup(props) {
     if (props.loggedIn) {
     return <Redirect to="/dashboard" />;
@@ -15,7 +13,7 @@ export function Signup(props) {
                 <RegistrationForm />
                 <Link to="/login">Login</Link>
             </div>
-    );    
+    );
 }
 
 const mapStateToProps = state => ({

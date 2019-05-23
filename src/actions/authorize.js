@@ -36,14 +36,17 @@ export const authError = error => ({
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
+    console.log(authToken);
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
     saveAuthToken(authToken);
 };
- //CALEB - update fetch endpoint --------
+
 export const login = (username, password) => dispatch => {
+    console.log('first line login action');
     dispatch(authRequest());
+    console.log('first line post authRequest');
     return (
         fetch(`${API_BASE_URL}/users/login`, {
             method: 'POST',
@@ -54,27 +57,28 @@ export const login = (username, password) => dispatch => {
                 username,
                 password
             })
+
+        }) 
+        // Reject any requests which don't return a 200 status, creating
+        // errors which follow a consistent format
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+        .catch(err => {
+            const {code} = err;
+            const message =
+                code === 401
+                    ? 'Incorrect username or password'
+                    : 'Unable to login, please try again';
+            dispatch(authError(err));
+            // Could not authenticate, so return a SubmissionError for Redux
+            // Form
+            return Promise.reject(
+                new SubmissionError({
+                    _error: message
+                })
+            );
         })
-            // Reject any requests which don't return a 200 status, creating
-            // errors which follow a consistent format
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            .catch(err => {
-                const {code} = err;
-                const message =
-                    code === 401
-                        ? 'Incorrect username or password'
-                        : 'Unable to login, please try again';
-                dispatch(authError(err));
-                // Could not authenticate, so return a SubmissionError for Redux
-                // Form
-                return Promise.reject(
-                    new SubmissionError({
-                        _error: message
-                    })
-                );
-            })
     );
 };
 
