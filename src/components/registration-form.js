@@ -9,7 +9,6 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-//        event.preventDefault();
         const {username, password} = values;
         const user = {username, password};
         return this.props
