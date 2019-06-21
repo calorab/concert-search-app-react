@@ -4,9 +4,6 @@ import React from 'react';
 import fetchSearchArtists from './searchartist';
 //import FollowedArtists from './followedartists';
 import {connect} from 'react-redux';
-import requireLogin from './require-login';
-//CALEB ------- Update the below for your use
-//import {fetchProtectedData} from '../actions/protected-data';
 
 //CALEB ------- update to dispatch GET followed artists or whatever
 export class Dashboard extends React.Component {
@@ -39,7 +36,7 @@ const mapStateToProps = state => {
     };
 };
 
-export default requireLogin()(connect(mapStateToProps)(Dashboard));
+export default connect(mapStateToProps)(Dashboard);
 
 
 // export default class Dashboard extends React.Component {
