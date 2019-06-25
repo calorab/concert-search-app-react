@@ -11,7 +11,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchSearchArtists());
     }
 //CALEB ------- Correct this to add followered artists and search artists to the return
-//(CALEB ------- line 24 is displaying the data from above line 13)
+//(CALEB ------- line 23 is displaying the data from above line 13)
     render() {
         return (
             <div className="dashboard">
@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
         );
     }
 }
-
+// CALEB --- This needs to be removed or updated - no auth, no name, no protected data
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
