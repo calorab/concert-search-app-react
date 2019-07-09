@@ -1,10 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
 import LoginForm from './login-form';
 
-export function Login(props) {
+export default function Login(props) {
     // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
@@ -19,11 +18,6 @@ export function Login(props) {
     );
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(Login);
 
 // export default class Login extends React.Component {
 

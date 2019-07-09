@@ -1,12 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 
-export function Signup(props) {
-    if (props.loggedIn) {
-    return <Redirect to="/dashboard" />;
-    }
+export default function Signup(props) {
     return (
             <div className="home">
                 <h2>Register for Concert Monster</h2>
@@ -16,8 +12,5 @@ export function Signup(props) {
     );
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
 
-export default connect(mapStateToProps)(Signup);
+

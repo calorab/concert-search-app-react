@@ -1,9 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 import {Link} from 'react-router-dom';
 
-export class Header extends React.Component {
+export default class Header extends React.Component {
 
     render() {
         return (
@@ -16,8 +15,3 @@ export class Header extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(Header);
