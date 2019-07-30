@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
-import {login} from '../actions/concert-monster';
+import {login} from '../actions/users';
 import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {

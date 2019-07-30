@@ -3,13 +3,14 @@ import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
 
 import concertMonsterReducer from './reducers/concert-monster';
+import userReducer from './reducers/users';
 
 
-//CALEB - Do I need a users reducer here?
 const store = createStore(
     combineReducers({
         form: formReducer,
-        main: concertMonsterReducer
+        artist: concertMonsterReducer,
+        user: userReducer
     }),
     applyMiddleware(thunk)
 );

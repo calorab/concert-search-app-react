@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import store from '../store';
 
 import LoginForm from './login-form';
 
@@ -8,6 +9,7 @@ export default function Login(props) {
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
+console.log(store.getState());
 
     return (
         <div className="home">
