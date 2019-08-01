@@ -7,16 +7,19 @@ import {connect} from 'react-redux';
 
 //CALEB ------- update to dispatch GET followed artists or whatever
 export class Dashboard extends React.Component {
-    // If we are logged in redirect straight to the user's dashboard
-    if (!loggedIn) {
-        return <Redirect to="/login" />;
-    }
-    console.log(store.getState());
+    // if (!loggedIn) {
+    //     return <Redirect to="/login" />;
+    // }
 
-    //CALEB - wrong function - need to write GET for saved artists
-    componentDidMount() {
+      //CALEB - wrong function - need to write GET for saved artists
+    componentDidMount(props) {
         this.props.dispatch(fetchSearchArtists());
     }
+
+    console.log(store.getState());
+    // If we are logged in redirect straight to the user's dashboard above
+  
+    
     //CALEB ------- Correct this to add followered artists and search artists to the return
     //(CALEB ------- line 23 needs to display the data from above line 13)
     render() {
