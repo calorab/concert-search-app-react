@@ -59,10 +59,11 @@ export const login = (username, password) => dispatch => {
                 password
             })
         })
-        //CALEB - added loginSuccess below *
+        
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => {dispatch(loginSuccess())})
+        .then(this.props.history.push('/dashboard'))
         .catch(err => {
             const {code} = err;
             const message =
