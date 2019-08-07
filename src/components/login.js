@@ -1,15 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import store from '../store';
 
+
 import LoginForm from './login-form';
 
-export default function Login(props) {
+function Login(props) {
     // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
-console.log(store.getState());
 
     return (
         <div className="home">
@@ -19,6 +20,8 @@ console.log(store.getState());
         </div>
     );
 }
+
+export default connect()(Login);
 
 //CALEB - connect to store??? ANSWER: NO
 

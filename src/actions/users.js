@@ -6,15 +6,16 @@ import {normalizeResponseErrors} from './utils';
 
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const loginSuccess = loggedIn => ({
+export const loginSuccess = (username, password) => ({
     type: LOGIN_SUCCESS,
-    loggedIn
+    username,
+    password
 });
 
+
 export const LOGIN_LOADING = 'LOGIN_LOADING';
-export const loginLoading = loading => ({
-    type: LOGIN_LOADING,
-    loading
+export const loginLoading = () => ({
+    type: LOGIN_LOADING
 });
 
 export const LOGIN_ERROR = 'LOGIN_ERROR';
@@ -51,7 +52,6 @@ export const registerUser = user => dispatch => {
 };
 //CALEB - 
 export const login = (username, password) => dispatch => {
-    console.log('got to login');
     return (
         fetch(`${API_BASE_URL}/users/login`, {
             method: 'POST',
