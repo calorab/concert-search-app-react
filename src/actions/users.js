@@ -6,18 +6,21 @@ import {normalizeResponseErrors} from './utils';
 
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const loginSuccess = () => ({
-    type: LOGIN_SUCCESS
+export const loginSuccess = loggedIn => ({
+    type: LOGIN_SUCCESS,
+    loggedIn
 });
 
 export const LOGIN_LOADING = 'LOGIN_LOADING';
-export const loginLoading = () => ({
-    type: LOGIN_LOADING
+export const loginLoading = loading => ({
+    type: LOGIN_LOADING,
+    loading
 });
 
 export const LOGIN_ERROR = 'LOGIN_ERROR';
-export const loginError = () => ({
-    type: LOGIN_ERROR
+export const loginError = error => ({
+    type: LOGIN_ERROR,
+    error
 });
 
 
@@ -46,8 +49,9 @@ export const registerUser = user => dispatch => {
        })
     );
 };
-
+//CALEB - 
 export const login = (username, password) => dispatch => {
+    console.log('got to login');
     return (
         fetch(`${API_BASE_URL}/users/login`, {
             method: 'POST',
@@ -63,7 +67,7 @@ export const login = (username, password) => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => {dispatch(loginSuccess())})
-        .then(this.props.history.push('/dashboard'))
+        .then(console.log("after loginSuccess"))
         .catch(err => {
             const {code} = err;
             const message =

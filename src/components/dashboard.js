@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchSearchArtists());
     }
 
-    console.log(store.getState());
+    // console.log(store.getState());
     // If we are logged in redirect straight to the user's dashboard above
   
     
