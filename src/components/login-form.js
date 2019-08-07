@@ -4,6 +4,7 @@ import Input from './input';
 import {login} from '../actions/users';
 import {required, nonEmpty} from '../validators';
 
+//CALEB - store.dispatch ?? connect ??
 export class LoginForm extends React.Component {
     onSubmit(values) {
         this.props.dispatch(login(values.username, values.password));

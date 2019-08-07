@@ -23,7 +23,7 @@ export class App extends React.Component {
       );
     }
 }
-
+//CALEB - state. reducers listed below!!!
 const mapStateToProps = state => ({
     userId: state.userId
 });

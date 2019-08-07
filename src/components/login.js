@@ -20,6 +20,10 @@ console.log(store.getState());
     );
 }
 
+//CALEB - connect to store??? ANSWER: NO
+
+
+
 
 // export default class Login extends React.Component {
 

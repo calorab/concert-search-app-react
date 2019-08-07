@@ -10,6 +10,7 @@ const initialState = {
     error: null
 };
 
+//CALEB - return newState for each ?
 export default function userReducer(state = initialState, action) {
     if (action.type === LOGIN_SUCCESS) {
         return Object.assign({}, state, {
