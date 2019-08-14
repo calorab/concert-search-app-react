@@ -51,7 +51,7 @@ export const registerUser = user => dispatch => {
     );
 };
 //CALEB - 
-export const login = (username, password) => dispatch => {
+export const login = (username, password, history) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/users/login`, {
             method: 'POST',
@@ -67,20 +67,25 @@ export const login = (username, password) => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => {dispatch(loginSuccess())})
-        .then(console.log("after loginSuccess"))
+        .then(() => history.push('/dashboard'))
         .catch(err => {
             const {code} = err;
             const message =
                 code === 401
                     ? 'Incorrect username or password'
                     : 'Unable to login, please try again';
-            // Could not authenticate, so return a SubmissionError for Redux
-            // Form
-            return Promise.reject(
-                new SubmissionError({
-                    _error: message
-                })
+            // Could not authenticate, so return a SubmissionError for Redux Form
+            // CALEB - Getting anonymous function below (submission error + extendable error too)
+            return ( 
+                error => {dispatch(loginError(error))}
             );
         })
     );
 };
+
+//the below removed from line 79-83 bc of error - working through StackOF possible fix
+// return Promise.reject(
+//                 new SubmissionError({
+//                     _error: message
+//                 })
+//             );

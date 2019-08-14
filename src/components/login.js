@@ -7,10 +7,10 @@ import store from '../store';
 import LoginForm from './login-form';
 
 function Login(props) {
-    // If we are logged in redirect straight to the user's dashboard
-    if (props.loggedIn) {
-        return <Redirect to="/dashboard" />;
-    }
+    // If we are logged in redirect straight to the user's dashboard ---- CALEB debug this if doesn't currently work
+    // if (props.loggedIn) {
+    //     return <Redirect to="/dashboard" />;
+    // }
 
     return (
         <div className="home">
