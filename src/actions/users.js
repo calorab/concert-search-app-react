@@ -8,8 +8,6 @@ import {normalizeResponseErrors} from './utils';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const loginSuccess = (username, password) => ({
     type: LOGIN_SUCCESS,
-    username,
-    password
 });
 
 
@@ -50,8 +48,8 @@ export const registerUser = user => dispatch => {
        })
     );
 };
-//CALEB - 
-export const login = (username, password, history) => dispatch => {
+//CALEB - add back in history as prop
+export const login = (username, password) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/users/login`, {
             method: 'POST',
@@ -67,7 +65,14 @@ export const login = (username, password, history) => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(() => {dispatch(loginSuccess())})
-        .then(() => history.push('/dashboard'))
+        // .then(() => {
+        //     console.log("hello");
+        //     try {
+        //         console.log(history);
+        //         console.log(history.push);
+        //         history.push('/dashboard');
+        //     } catch (err){console.log(err)}    
+        // })
         .catch(err => {
             const {code} = err;
             const message =
@@ -75,15 +80,12 @@ export const login = (username, password, history) => dispatch => {
                     ? 'Incorrect username or password'
                     : 'Unable to login, please try again';
             // Could not authenticate, so return a SubmissionError for Redux Form
-            // CALEB - Getting anonymous function below (submission error + extendable error too)
-            return ( 
-                error => {dispatch(loginError(error))}
-            );
+            dispatch(loginError(err))     
         })
     );
 };
 
-//the below removed from line 79-83 bc of error - working through StackOF possible fix
+//CALEB - the below removed from line 79-83 bc of error - working through StackOF possible fix... although promises in utils too
 // return Promise.reject(
 //                 new SubmissionError({
 //                     _error: message

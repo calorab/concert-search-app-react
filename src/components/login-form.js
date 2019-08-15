@@ -7,7 +7,7 @@ import {required, nonEmpty} from '../validators';
 //CALEB - store.dispatch ?? connect ??
 export class LoginForm extends React.Component {
     onSubmit(values) {
-        this.props.dispatch(login(values.username, values.password, this.props.history));
+        this.props.dispatch(login(values.username, values.password));
         //CALEB - doesn't work but state correctly changed thus far - "loggedIn:true"
         // this.props.history.push('/dashboard');
     }

@@ -7,10 +7,14 @@ import store from '../store';
 import LoginForm from './login-form';
 
 function Login(props) {
-    // If we are logged in redirect straight to the user's dashboard ---- CALEB debug this if doesn't currently work
-    // if (props.loggedIn) {
-    //     return <Redirect to="/dashboard" />;
-    // }
+    // If we are logged in redirect straight to the user's dashboard 
+    //---- CALEB debug this as loggedIn is true after loginSuccess but no Redirect
+    console.log(props);
+    if (props.loggedIn === true) {
+
+        console.log("Login line 12");
+        return <Redirect to="/dashboard" />;
+    }
 
     return (
         <div className="home">
@@ -21,9 +25,11 @@ function Login(props) {
     );
 }
 
-export default connect()(Login);
+const mapStateToProps = state => ({
+    loggedIn: state.user.loggedIn
+});
 
-//CALEB - connect to store??? ANSWER: NO
+export default connect(mapStateToProps)(Login);
 
 
 
